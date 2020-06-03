@@ -1,0 +1,12 @@
+---
+title: "Documentation"
+date: "03/06/2020"
+output: html_document
+---
+## Documentation
+- The data set was gotten from kaggle [here](https://www.kaggle.com/sudalairajkumar/covid19-in-india).
+- The googlevis motion chart allows you to visualise the COVID-19 situation in India states.
+- Select a state and view the motion chart corresponding to the state on the right. 
+- You can set x to positive, negative, total samples tested (all are cumulative), time
+ & more and so is the case with y, color and size.
+- For instance, set x to time and y and color to positive and size to total samples tested to view how, for that particular state in India, the number of COVID-19 cases has grown/shrink with time.

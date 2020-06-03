@@ -1,0 +1,42 @@
+COVID-19 in Indian States
+========================================================
+author: indiandataboy
+date: 3 June 2020
+autosize: true
+Shiny Application
+========================================================
+
+* The shiny application can be found [here](https://indiandataboy.shinyapps.io/COVID19-INDIA/) 
+
+* The source code can be found [here](https://github.com/indiandataboy/COVID-19_India/tree/master/gh-pages) on github.
+
+Purpose of this App
+========================================================
+- Allows you to pick a state from India, and view the google motion chart that it corresponds to.
+- Use radio buttons to pick a state/union territory.
+- Plot positives (cumulative) against time to visualise growth rate over time or any of positives, negatives, total tested samples against time or each other...
+
+Working of the App
+========================================================
+- The data was obtained from kaggle [here](https://www.kaggle.com/sudalairajkumar/covid19-in-india).
+- The data is then ordered by states.
+- Data exists for 35 states and union territories
+```{r echo = FALSE}
+state_data <- read.csv("StatewiseTestingDetails.csv", header = TRUE, stringsAsFactors = FALSE)
+state_data$Date <- as.Date(state_data$Date, format = "%Y-%m-%d")
+state_data <- state_data[order(state_data$State, state_data$Date), ]
+```
+
+```{r echo = TRUE}
+length(unique(state_data$State))
+```
+
+- Based on the option chosen from the radio buttons, the data for that state is subsetted out.
+Output of the App
+========================================================
+- A googlevis motion chart for the state chosen.
+
+Visulisation of :
+- Positives against time
+- Negatives against time
+- Positives against total samples tested & more
